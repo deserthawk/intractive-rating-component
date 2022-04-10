@@ -1,0 +1,151 @@
+$backgroundColor: hsl(216, 12%, 8%)
+$componentBackground: hsl(213, 19%, 18%)
+$iconBackground: hsl(213, 19%, 23%)
+$headerColor: hsl(0, 0%, 100%)
+$fontColor: hsl(216, 12%, 54%)
+$orange: hsl(25, 97%, 53%)
+$lightGrey: hsl(217, 12%, 63%)
+
+$componentWidth: 350px
+$componentMarginLeft: 30px
+
+@mixin componentCss
+    width: $componentWidth
+    height: 370px
+    margin: auto
+    background-color: $componentBackground
+    border-radius: 30px
+    display: flex
+    flex-direction: column
+    
+body
+    background-color: $backgroundColor
+    width: 100%
+    height: 100vh
+    font-family: 'Overpass', sans-serif
+
+main
+    height: 100%
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin: auto
+    font-family: 'Overpass', sans-serif
+
+.component
+    @include componentCss
+    
+.icon-star
+    margin-top: 30px
+    margin-left: $componentMarginLeft
+    width: 30px
+    display: flex
+    justify-content: center
+    padding: 12px 7px
+    background-color: $iconBackground
+    border-radius: 50%
+
+.component-header
+    margin-left: $componentMarginLeft
+    margin-top: 20px
+    color: $headerColor
+    font-weight: 700
+    font-size: 1.5em
+
+.component-paragraph
+    margin-left: $componentMarginLeft
+    margin-top: 20px
+    color: $fontColor
+    width: $componentWidth - $componentMarginLeft -10
+    font-size: 0.8em
+    line-height: 1.7
+    font-weight: 700
+
+.component-rating
+    margin-left: $componentMarginLeft
+    margin-right: $componentMarginLeft
+    margin-top: 20px
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    color: $fontColor
+
+.rating
+    width: 30px
+    display: flex
+    justify-content: center
+    padding: 12px 7px
+    background-color: $iconBackground
+    border-radius: 50%
+    cursor: pointer
+    &:hover
+        background-color: $orange !important
+        color: $headerColor !important
+
+.selected
+    background-color: $lightGrey !important
+    color: $headerColor !important
+
+.component-submit
+    margin-left: $componentMarginLeft
+    margin-right: $componentMarginLeft
+    margin-top: 30px
+
+.submit-btn
+    width: 100%
+    padding-top: 10px
+    padding-bottom: 10px
+    border-radius: 30px
+    background-color: $orange
+    color: $headerColor
+    text-transform: uppercase
+    font-weight: 700
+    letter-spacing: 2px
+    border: 0
+    cursor: pointer
+    &:hover
+        background-color: $headerColor
+        color: $orange
+
+.result
+    @include componentCss
+    text-align: center
+    color: $headerColor
+    display: none
+
+.result-img
+    margin-top: 30px
+
+.result-rating
+    margin-top: 20px
+    p
+        width: 190px
+        margin: auto
+        color: $orange
+        padding-top: 5px
+        padding-bottom: 4px
+        background-color: $iconBackground
+        border-radius: 25px
+
+.result-header
+    margin-top: 30px
+    h2
+        font-size: 1.5em
+
+.result-info
+    margin-top: 20px
+    font-size: 0.8em
+    color: $fontColor
+    p
+       width: $componentWidth - 60
+       margin: auto
+       line-height: 1.7
+
+.attribution
+    color: $fontColor
+    text-align: center
+    a
+        color: $orange
+        text-decoration: none
+        
